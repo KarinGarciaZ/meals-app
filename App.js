@@ -1,21 +1,10 @@
 import React from 'react';
-import {
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-} from 'react-native';
+import AppContainer from './navigation/MealNavigator'
 
 const App = () => {
   return (
-      <View>
-        <Text>Texto</Text>
-      </View>
+    <AppContainer />
   );
 };
-
-const styles = StyleSheet.create({
-  
-});
 
 export default App;
