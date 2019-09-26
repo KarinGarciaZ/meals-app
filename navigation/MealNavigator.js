@@ -1,17 +1,35 @@
 import React from "react";
-import { createBottomTabNavigator, createAppContainer, createStackNavigator, createDrawerNavigator } from "react-navigation";
+import { createBottomTabNavigator, createAppContainer, createStackNavigator, createDrawerNavigator } from "react-navigation"
+import Colors from '../constants/Colors'
 
 import CategoriesScreen from '../screens/CategoriesScreen'
 import CategoryMealScreen from '../screens/CategoryMealScreen'
 import MealDetailScreen from '../screens/MealDetailScreen'
 
 const AppNavigator = createStackNavigator({
-  Categories: CategoriesScreen,
+  Categories: {
+    screen: CategoriesScreen,
+    navigationOptions: {
+      headerTitle: 'Meal Categories',
+    }
+  },
+  MealDetail:{
+    screen: MealDetailScreen,
+    navigationOptions: {
+      headerTitle: 'Meal Detail',
+    }
+  },   
   CategoryMeal: CategoryMealScreen,
-  MealDetail: MealDetailScreen
 },
 {
-  initialRouteName: "Categories",
+  mode: 'modal',
+  //initialRouteName: "Categories",  
+  defaultNavigationOptions: {
+    headerTintColor: '#fff',
+    headerStyle: {
+      backgroundColor: Colors.primaryColor
+    }
+  }
 })
 
 export default createAppContainer(AppNavigator)
