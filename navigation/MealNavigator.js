@@ -15,9 +15,6 @@ const AppNavigator = createStackNavigator({
   },
   MealDetail:{
     screen: MealDetailScreen,
-    navigationOptions: {
-      headerTitle: 'Meal Detail',
-    }
   },   
   CategoryMeal: CategoryMealScreen,
 },
