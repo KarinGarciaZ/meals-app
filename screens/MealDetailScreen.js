@@ -1,6 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { MEALS } from '../data/dummy-data'
+import Icon from 'react-native-vector-icons/FontAwesome'
+
+import { HeaderButtons, Item } from 'react-navigation-header-buttons'
+import CustomHeaderButton from '../components/HeaderButton'
 
 const MealDetailScreen = props => {
 
@@ -17,7 +21,10 @@ MealDetailScreen.navigationOptions = ({navigation})=> {
   const meal = MEALS.find( meal => meal.id === navigation.getParam('itemId') )
 
   return {
-    headerTitle: meal.title,   
+    headerTitle: meal.title,
+    headerRight: <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+      <Item title='Favorite' iconName='star-o' onPress={() => {  }}/>
+    </HeaderButtons>   
   }
 }
 
